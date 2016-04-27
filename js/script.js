@@ -65,3 +65,9 @@ var quotes = [
 		year: 2005
 	}
 ];
+
+//return randomly selected objects in quotes
+function getRandomQuote() {
+	var randomNum = Math.floor(Math.random() * 10) + 1;
+	return quotes[randomNum];
+}
