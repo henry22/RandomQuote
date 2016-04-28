@@ -29,21 +29,21 @@ var quotes = [
 		year: 1993
 	},
 	{
-		quote: "Politics is the gentle art of getting votes from the poor and campaign funds from the rich by promising to protect each from the other.",
-		source: "OSCAR AMERINGER",
-		citation: "Quoted in Ferdinand Lundberg, Scoundrels All",
-		year: 1968
+		quote: "I don’t care to belong to any organization that accepts me as a member.",
+		source: "GROUCHO MARX",
+		citation: "Laughter Is An Instant Vacation",
+		year: 2008
 	},
 	{
 		quote: "Little minds are tamed and subdued by misfortune; but great minds rise above them.",
 		source: "WASHINGTON IRVING",
-		citation: "Irving, Washington. The Sketch Book of Geoffrey Crayon, Gent.",
+		citation: "The Sketch Book of Geoffrey Crayon, Gent.",
 		year: 1820
 	},
 	{
 		quote: "Don’t just stand there; make something happen.",
 		source: "LEE IACOCCA",
-		citation: "Attributed in Reader’s Digest, Quotable Quotes: Wit and Wisdom from the Greatest Minds of Our Time ",
+		citation: "Wit and Wisdom from the Greatest Minds of Our Time ",
 		year: 2012
 	},
 	{
@@ -53,15 +53,15 @@ var quotes = [
 		year: 1989
 	},
 	{
-		quote: "They say such nice things about people at their funerals that it makes me sad to realize that I’m going to miss mine by just a few days.",
-		source: "GARRISON KEILLOR",
-		citation: "Attributed in Mac Anderson, Laughter Is An Instant Vacation",
-		year: 2008
+		quote: "If you’re not prepared to be wrong, you’ll never come up with anything original.",
+		source: "KEN ROBINSON",
+		citation: "How Schools Kill Creativity.",
+		year: 2006
 	},
 	{
 		quote: "I don’t get no respect. When I played in the sandbox the cat kept covering me up.",
 		source: "RODNEY DANGERFIELD",
-		citation: "Attributed in Judy Brown, The Comedy Thesaurus: 3,241 Quips, Quotes, and Smartass Remarks",
+		citation: "The Comedy Thesaurus: 3,241 Quips, Quotes, and Smartass Remarks",
 		year: 2005
 	}
 ];
@@ -78,5 +78,10 @@ function printQuote() {
 	var displayHTML = "";
 
 	displayHTML += '<p class="quote">' + randomQuote.quote + '</p>';
+	displayHTML += '<p class="source">' + randomQuote.source;
+	displayHTML += '<span class="citation">' + randomQuote.citation + '</span>';
+	displayHTML += '<span class="year">' + randomQuote.year + '</span>';
+	displayHTML += '</p>';
+
 	document.getElementById('quote-box').innerHTML = displayHTML;
 }
