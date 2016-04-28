@@ -11,10 +11,10 @@ var quotes = [
 		year: 1907
 	},
 	{
-		quote: "I’ve missed more than 9,000 shots in my career. I’ve lost almost 300 games. Twenty-six times, I’ve been trusted to take the game-winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed.",
-		source: "MICHAEL JORDAN",
-		citation: "Goldman, Robert and Papson, Stephen. Nike Culture: The Sign of the Swoosh.",
-		year: 1998
+		quote: "There’s a ball. There’s a hoop. You put the ball through the hoop. That’s success.",
+		source: "KAREEM ABDUL-JABBAR",
+		citation: "Wit and Wisdom from the Greatest Minds of Our Time",
+		year: 2012
 	},
 	{
 		quote: "All our dreams can come true, if we have the courage to pursue them.",
@@ -70,4 +70,13 @@ var quotes = [
 function getRandomQuote() {
 	var randomNum = Math.floor(Math.random() * 10) + 1;
 	return quotes[randomNum];
+}
+
+
+function printQuote() {
+	var randomQuote = getRandomQuote();
+	var displayHTML = "";
+
+	displayHTML += '<p class="quote">' + randomQuote.quote + '</p>';
+	document.getElementById('quote-box').innerHTML = displayHTML;
 }
