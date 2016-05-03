@@ -2,7 +2,7 @@
 // when user clicks anywhere on the page, the "makeQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-
+//An array of objects
 var quotes = [
 	{
 		quote: "It is better to remain silent at the risk of being thought a fool, than to talk and remove all doubt of it.",
@@ -72,7 +72,7 @@ function getRandomQuote() {
 	return quotes[randomNum];
 }
 
-
+//show random quotes through html
 function printQuote() {
 	var randomQuote = getRandomQuote();
 	var displayHTML = "";
