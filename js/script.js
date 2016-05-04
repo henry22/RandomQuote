@@ -2,6 +2,7 @@
 // when user clicks anywhere on the page, the "makeQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+
 //An array of objects
 var quotes = [
 	{
@@ -35,13 +36,13 @@ var quotes = [
 		year: 2008
 	},
 	{
-		quote: "Little minds are tamed and subdued by misfortune; but great minds rise above them.",
+		quote: "Little minds are tamed and subdued by misfortune, but great minds rise above them.",
 		source: "WASHINGTON IRVING",
 		citation: "The Sketch Book of Geoffrey Crayon, Gent.",
 		year: 1820
 	},
 	{
-		quote: "Don’t just stand there; make something happen.",
+		quote: "Don’t just stand there, make something happen.",
 		source: "LEE IACOCCA",
 		citation: "Wit and Wisdom from the Greatest Minds of Our Time ",
 		year: 2012
@@ -68,14 +69,15 @@ var quotes = [
 
 //return randomly selected objects in quotes
 function getRandomQuote() {
-	var randomNum = Math.floor(Math.random() * 10) + 1;
+	var randomNum = Math.floor(Math.random() * 10);
 	return quotes[randomNum];
 }
+
 
 //show random quotes through html
 function printQuote() {
 	var randomQuote = getRandomQuote();
-	var displayHTML = "";
+	var displayHTML = '';
 
 	displayHTML += '<p class="quote">' + randomQuote.quote + '</p>';
 	displayHTML += '<p class="source">' + randomQuote.source;
@@ -83,5 +85,17 @@ function printQuote() {
 	displayHTML += '<span class="year">' + randomQuote.year + '</span>';
 	displayHTML += '</p>';
 
+
 	document.getElementById('quote-box').innerHTML = displayHTML;
+	randomColor();
+}
+
+//create random color
+function randomColor() {
+	var colorList = ["#ff9933", "#ffcc66", "#ccccff", "#ffccff", "#ff9999", "#cc6600", "#99ffcc", "#99ccff", "#e0e0b8", "#3333ff"];
+	document.body.style.background = colorList[Math.floor(Math.random() * colorList.length)];
+}
+
+function refreshPage() {
+	var intervalID = window.setInterval(printQuote, 2000);
 }
