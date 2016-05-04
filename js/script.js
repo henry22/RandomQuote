@@ -96,6 +96,7 @@ function randomColor() {
 	document.body.style.background = colorList[Math.floor(Math.random() * colorList.length)];
 }
 
+//refrsh the page per 5 sec
 function refreshPage() {
-	var intervalID = window.setInterval(printQuote, 2000);
+	var intervalID = window.setInterval(printQuote, 5000);
 }
