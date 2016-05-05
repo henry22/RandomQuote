@@ -67,10 +67,23 @@ var quotes = [
 	}
 ];
 
+//global variable empty array
+var emptyArr = [];
+
 //return randomly selected objects in quotes
 function getRandomQuote() {
-	var randomNum = Math.floor(Math.random() * 10);
-	return quotes[randomNum];
+	var randomNum = Math.floor(Math.random() * quotes.length);
+	var randomQuote = quotes[randomNum];
+	var removeQuote = quotes.splice(randomNum, 1)[0];
+	
+	emptyArr.push(removeQuote);
+
+	if (quotes.length === 0) {
+		quotes = emptyArr;
+		emptyArr = [];
+
+	}
+	return randomQuote;
 }
 
 
@@ -85,9 +98,10 @@ function printQuote() {
 	displayHTML += '<span class="year">' + randomQuote.year + '</span>';
 	displayHTML += '</p>';
 
-
 	document.getElementById('quote-box').innerHTML = displayHTML;
 	randomColor();
+
+
 }
 
 //create random color
